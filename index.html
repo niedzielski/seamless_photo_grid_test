@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!------------------------------------------------------------------------------
+Stephen Niedzielski
+Copyright 2012 Stephen Niedzielski. Licensed under GPLv3.
+
+Dirty hacks for a seamless grid. Appears to work on Chrome, Firefox, and IE8.
+
+Constraints:
+    - Thumbs have to be a consistent width.
+    - The more rows the more potential for large deltas in the column heights.
+
+Quick and dirty thumbs with ImageMagick:
+    for i in *.jpg; do convert -thumbnail 300x450 "$i" ${i:0:-4}s.png #&& rm "$i"; done
+
+Randomize:
+    ls -1 img/*|sort -R
+
+------------------------------------------------------------------------------->
+
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+
+        <title>Seamless Photo Grid Test</title>
+
+        <style type="text/css">
+            .seamless
+            {
+                margin: 0;
+                padding: 0;
+                font-size: 0;
+            }
+
+            .photo_column
+            {
+                width: 20%;
+                float: left;
+            }
+
+            .photo_column img
+            {
+                width: 100%;
+            }
+
+            .photo_column li
+            {
+                padding: 7px 7px 7px 7px;
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <div class="seamless" style="text-align: center;">
+
+            <div class="seamless" style="display: inline-block;">
+
+                <ul class="seamless photo_column">
+                    <li><img src="img/2012-08-18_18.20.59s.png" /></li>
+                    <li><img src="img/2012-08-30_19.14.01s.png" /></li>
+                    <li><img src="img/2012-08-18_18.31.55s.png" /></li>
+                    <li><img src="img/2012-07-07_16.01.39s.png" /></li>
+                    <li><img src="img/IMG_20120906_124603s.png" /></li>
+                    <li><img src="img/2012-08-19_16.24.02s.png" /></li>
+                </ul>
+
+                <ul class="seamless photo_column">
+                    <li><img src="img/2012-08-18_18.21.18s.png" /></li>
+                    <li><img src="img/IMG_20120912_181156s.png" /></li>
+                    <li><img src="img/IMG_0241s.png" /></li>
+                    <li><img src="img/2012-07-07_16.43.33s.png" /></li>
+                    <li><img src="img/2012-07-12_19.14.23s.png" /></li>
+                    <li><img src="img/IMG_20120907_121033s.png" /></li>
+                </ul>
+
+                <ul class="seamless photo_column">
+                    <li><img src="img/IMG_0247s.png" /></li>
+                    <li><img src="img/IMG_20120818_184610s.png" /></li>
+                    <li><img src="img/IMG_20120831_121819s.png" /></li>
+                    <li><img src="img/DSC_0868s.png" /></li>
+                    <li><img src="img/2012-09-05_18.57.01s.png" /></li>
+                    <li><img src="img/IMG_20120906_124702s.png" /></li>
+                </ul>
+
+                <ul class="seamless photo_column">
+                    <li><img src="img/DSC_0010s.png" /></li>
+                    <li><img src="img/2012-08-30_18.54.29s.png" /></li>
+                    <li><img src="img/2012-07-14_14.30.05s.png" /></li>
+                    <li><img src="img/2012-07-14_23.54.43s.png" /></li>
+                    <li><img src="img/IMG_20120720_152354s.png" /></li>
+                    <li><img src="img/2012-09-04_12.32.54s.png" /></li>
+                </ul>
+
+                <ul class="seamless photo_column">
+                    <li><img src="img/IMG_20120906_124656s.png" /></li>
+                    <li><img src="img/IMG_20120906_122221s.png" /></li>
+                    <li><img src="img/2012-10-20_17.27.40s.png" /></li>
+                    <li><img src="img/IMG_20120907_120321s.png" /></li>
+                    <li><img src="img/2012-08-19_16.32.33s.png" /></li>
+                    <li><img src="img/2012-07-12_19.10.35s.png" /></li>
+                    <li><img src="img/2012-07-11_18.25.05s.png" /></li>
+                </ul>
+ 
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
